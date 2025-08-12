@@ -7,3 +7,4 @@ resources:
   - cm.yaml
   - pv.yaml
   - pvc.yaml
+  - secret.yaml
