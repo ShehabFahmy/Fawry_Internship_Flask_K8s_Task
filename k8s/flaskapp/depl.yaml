@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp-depl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flaskapp
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - name: flaskapp
+        image: shehabfahmy/fawry-k8s-project-flaskapp:latest
+        ports:
+          - containerPort: 5002
+        envFrom:
+          - configMapRef:
+              name: flaskapp-cm
