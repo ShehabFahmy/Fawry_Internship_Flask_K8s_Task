@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - svc.yaml
-  - depl.yaml
+  - statefulset.yaml
   - cm.yaml
   - pv.yaml
   - pvc.yaml
