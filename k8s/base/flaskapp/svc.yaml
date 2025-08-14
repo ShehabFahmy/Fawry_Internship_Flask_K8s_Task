@@ -5,11 +5,8 @@ metadata:
 spec:
   selector:
     app: flaskapp
-  type: NodePort
+  type: ClusterIP
   ports:
-    - name: http
-      protocol: TCP
-      port: 5000        # Port exposed by the Service
+    - port: 5000        # Port exposed by the Service
       targetPort: 5002  # Port inside the container
-      nodePort: 30080
 
