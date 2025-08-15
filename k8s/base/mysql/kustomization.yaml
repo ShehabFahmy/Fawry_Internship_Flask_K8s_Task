@@ -4,7 +4,16 @@ kind: Kustomization
 resources:
   - svc.yaml
   - statefulset.yaml
-  - cm.yaml
   - pv.yaml
   - pvc.yaml
-  - secret.yaml
+
+configMapGenerator:
+- name: db-cm
+  literals:
+  - MYSQL_ROOT_PASSWORD=root
+
+secretGenerator:
+- name: dockerhub-secret
+  files:
+    - .dockerconfigjson=my-dockerhub-cred.txt
+  type: kubernetes.io/dockerconfigjson

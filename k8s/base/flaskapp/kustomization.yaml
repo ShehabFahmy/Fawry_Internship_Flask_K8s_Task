@@ -4,4 +4,11 @@ kind: Kustomization
 resources:
   - svc.yaml
   - depl.yaml
-  - cm.yaml
+
+configMapGenerator:
+- name: flaskapp-cm
+  literals:
+  - MYSQL_DATABASE_USER=root
+  - MYSQL_DATABASE_PASSWORD=root
+  - MYSQL_DATABASE_DB=BucketList
+  - MYSQL_DATABASE_HOST=db-service
