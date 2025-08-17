@@ -18,6 +18,16 @@ spec:
       containers:
         - name: mysql
           image: shehabfahmy/fawry-k8s-project-mysql:latest
+          readinessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          startupProbe:
+            tcpSocket:
+              port: 3306
+            failureThreshold: 6
+            periodSeconds: 10
           ports:
             - containerPort: 3306
           envFrom:
