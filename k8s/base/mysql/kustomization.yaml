@@ -4,8 +4,6 @@ kind: Kustomization
 resources:
   - svc.yaml
   - statefulset.yaml
-  - pv.yaml
-  - pvc.yaml
 
 configMapGenerator:
 - name: db-cm
