@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: testing
 
 bases:
-  - ../../../base/common
+  - ../../base/common
 
 resources:
   - flaskapp/
