@@ -6,3 +6,4 @@ namespace: testing
 resources:
   - flaskapp/
   - mysql/
+  - namespace.yaml

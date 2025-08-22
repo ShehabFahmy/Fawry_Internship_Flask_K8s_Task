@@ -7,3 +7,4 @@ resources:
   - flaskapp/
   - mysql/
   - ingress.yaml
+  - namespace.yaml
