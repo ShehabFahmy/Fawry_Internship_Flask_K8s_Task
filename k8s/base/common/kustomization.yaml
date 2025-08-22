@@ -4,12 +4,3 @@ kind: Kustomization
 resources:
   - limit-range.yaml
   - net-policy.yaml
-
-images:
-  - name: fawry-project-flaskapp-image
-    newName: shehabfahmy/fawry-k8s-project-flaskapp
-    newTag: latest
-  
-  - name: fawry-project-mysql-image
-    newName: shehabfahmy/fawry-k8s-project-mysql
-    newTag: latest
