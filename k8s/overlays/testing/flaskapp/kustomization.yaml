@@ -22,17 +22,3 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 1
-  - target:
-      kind: Deployment
-      name: flaskapp-depl
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/resources/limits/memory
-        value: "256Mi"
-  - target:
-      kind: Deployment
-      name: flaskapp-depl
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/resources/limits/cpu
-        value: "200m"
