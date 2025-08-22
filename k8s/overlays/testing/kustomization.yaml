@@ -3,16 +3,10 @@ kind: Kustomization
 
 namespace: testing
 
+bases:
+  - ../../../base/common
+
 resources:
   - flaskapp/
   - mysql/
   - namespace.yaml
-
-images:
-  - name: fawry-project-flaskapp-image
-    newName: shehabfahmy/fawry-k8s-project-flaskapp
-    newTag: latest
-  
-  - name: fawry-project-mysql-image
-    newName: shehabfahmy/fawry-k8s-project-mysql
-    newTag: latest

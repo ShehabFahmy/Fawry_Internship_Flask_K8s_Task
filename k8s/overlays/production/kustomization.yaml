@@ -3,17 +3,29 @@ kind: Kustomization
 
 namespace: production
 
+bases:
+  - ../../../base/common
+
 resources:
   - flaskapp/
   - mysql/
   - ingress.yaml
   - namespace.yaml
 
-images:
-  - name: fawry-project-flaskapp-image
-    newName: shehabfahmy/fawry-k8s-project-flaskapp
-    newTag: latest
-  
-  - name: fawry-project-mysql-image
-    newName: shehabfahmy/fawry-k8s-project-mysql
-    newTag: latest
+patches:
+  - patch: |-
+      apiVersion: v1
+      kind: LimitRange
+      metadata:
+        name: flaskapp-limits
+      spec:
+        limits:
+        - default: 
+            cpu: 500m
+            memory: 512Mi
+          defaultRequest:
+            cpu: 250m
+            memory: 256Mi
+          max:
+            cpu: "1"
+            memory: 1Gi

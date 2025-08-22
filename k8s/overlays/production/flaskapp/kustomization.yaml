@@ -12,19 +12,3 @@ patches:
       - op: replace
         path: /spec/replicas
         value: 3
-  - patch: |-
-      apiVersion: v1
-      kind: LimitRange
-      metadata:
-        name: flaskapp-limits
-      spec:
-        limits:
-        - default: 
-            cpu: 500m
-            memory: 512Mi
-          defaultRequest:
-            cpu: 250m
-            memory: 256Mi
-          max:
-            cpu: "1"
-            memory: 1Gi

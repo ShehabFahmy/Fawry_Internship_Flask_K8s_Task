@@ -5,4 +5,4 @@ bases:
   - ../../../base/mysql
 
 patches:
-  - statefulset-patch.yaml
+  - path: statefulset-patch.yaml

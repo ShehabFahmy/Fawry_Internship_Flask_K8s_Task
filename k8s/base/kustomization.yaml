@@ -4,5 +4,4 @@ kind: Kustomization
 resources:
   - flaskapp/
   - mysql/
-  - net-policy.yaml
-  - limit-range.yaml
+  - common/
